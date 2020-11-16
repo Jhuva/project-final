@@ -17,7 +17,7 @@
             <form class="login__container--form">
                 <input class="input" type="text" placeholder="Usuario">
                 <input class="input" type="password" placeholder="Contraseña">
-                <button class="btn btn-primary">Ingresar</button>
+                <button class="btn btn-danger">Ingresar</button>
             </form>
             
         </div>

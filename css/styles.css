@@ -1,3 +1,10 @@
 .login {
-    background: linear-gradient(#ee6f57, #f6f5f5)
+    background: linear-gradient(#f6f5f5, #1f3c88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(130vh - 272px);
 }
+
