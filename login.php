@@ -11,17 +11,17 @@
 </head>
 <body>
     
-    <section class="login">
+    <form action="validar.php" method="post" class="login">
         <div class="login__container">
             <h2>Administrador</h2>
             <form class="login__container--form">
-                <input class="input" type="text" placeholder="Usuario">
-                <input class="input" type="password" placeholder="Contraseña">
+                <input class="input" type="text" placeholder="Usuario" name="usuario">
+                <input class="input" type="password" placeholder="Contraseña" name="contraseña">
                 <button class="button btn btn-danger">Ingresar</button>
             </form>
             
         </div>
-    </section>
+    </form>
 
     <footer class="footer">
         <a href="">Terminos de uso</a>
