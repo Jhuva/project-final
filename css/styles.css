@@ -1,7 +1,5 @@
-body {
-    background: linear-gradient(#f6f5f5, #1f3c88);
-}
 .login {
+    background: linear-gradient(#f6f5f5, #1f3c88);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +44,7 @@ body {
     margin-top: 10px;
 }
 .footer {
-    background-color: transparent;
+    background-color: #1f3c88;
     display: flex;
     align-items: center;
     height: 100px;
