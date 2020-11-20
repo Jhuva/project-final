@@ -23,12 +23,6 @@
         </div>
     </section>
 
-    <section class="footer">
-        <a href="">Terminos de uso</a>
-        <a href="">Declaración de privacidad</a>
-        <a href="">Centro de ayuda</a>
-    </section>
-
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
