@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    $varsesion = $_SESSION['usuario'];
+    if($varsesion == null || $varsesion = '') {
+        header("location:login.php");
+        die();
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +19,28 @@
     <title>Panel de Control</title>
 </head>
 <body>
+
     
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mt-4 pt-4 pl-4 mb-4 pb-4 bg-danger text-light">
+                    <h1 class="">Panel de Control</h1>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Usuario
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Crear nuevo</a>
+                            <a class="dropdown-item" href="cerrarSesion.php">Salir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="container">
-        <h1 class="mt-4 pt-4 pl-4 mb-4 pb-4 bg-danger text-light">Panel de Control</h1>
         <div class="row">
             <div class="col col-md-3">
                 <div class="productos mt-5 mb-4">
