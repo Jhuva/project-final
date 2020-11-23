@@ -13,9 +13,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Panel de Control</title>
 </head>
 <body>
@@ -642,6 +647,12 @@
         </div>
     </section>
 
+    <footer class="footer">
+        <a href="">Terminos de uso</a>
+        <a href="">Declaracion de privacidad</a>
+        <a href="">Centro de ayuda</a>
+        <a href="">Copyright 2020 InfoData | Todos los derechos reservados</a>
+    </footer>
 
 
 
