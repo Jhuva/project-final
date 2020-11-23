@@ -134,8 +134,8 @@
                                         <td>PC Core i3 3.2GHZ HP 8300 Elite (5ta.Gen)</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -144,8 +144,8 @@
                                         <td>PC HP 6300 PRO Core I3 (3ºGen) + LED DE 19" HP</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -154,8 +154,8 @@
                                         <td>PC Core i3 3.2GHZ HP 8300 Elite (5ta.Gen)</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -164,8 +164,8 @@
                                         <td>AIO Lenovo E72Z core i5 - 3° Gen</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -174,8 +174,8 @@
                                         <td>AIO Lenovo M70z Core i3 3.2Ghz</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -235,8 +235,8 @@
                                         <td>LAPTOP EPIK ELL1201T INTEL ATOM 32GB</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -245,8 +245,8 @@
                                         <td>NOTEBOOK HP 15 - DY1005LA</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -255,8 +255,8 @@
                                         <td>NOTEBOOK HP HP PAVILION 15</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -265,8 +265,8 @@
                                         <td>Dell Latitude e6320 Core I5</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -275,8 +275,8 @@
                                         <td>LAPTOP HP Probook 4430s Core i3 2.3GHZ</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -333,8 +333,8 @@
                                         <td>IMPRESORA CANON PIXMA MG2410</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -343,8 +343,8 @@
                                         <td>impresora multifuncional EPSON l220</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -353,8 +353,8 @@
                                         <td>Impresora multifuncional EPSON l220</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -363,8 +363,8 @@
                                         <td>Impresora Multifuncional CANON 3610 WIFI</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -421,8 +421,8 @@
                                         <td>MONITOR DELL - 17 PULGADAS</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -431,8 +431,8 @@
                                         <td>MONITOR HP LED 24" V241P FULL HD 1080p</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -441,8 +441,8 @@
                                         <td>MONITOR LCD HP S1933 DE 18.5" WIDESCREEN</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -451,8 +451,8 @@
                                         <td>MONITOR NUEVO HP PRODISPLAY DE 20" DLP</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -509,8 +509,8 @@
                                         <td>CPU i5 4ta Generación - Lenovo tiny</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -519,8 +519,8 @@
                                         <td>PC TOWER HP 3500 PRO Core I5 - 3ra.GEN.</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -529,8 +529,8 @@
                                         <td>PC Core i5 3.2GHZ HP 8300 Elite (3ra.Gen)</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -539,8 +539,8 @@
                                         <td>HP 6000 PRO – 8000 PRO C2D 3.0 GHZ DESKTOP</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -549,8 +549,8 @@
                                         <td>PC DELL TOWER GX745 C2D 2.1 GHZ</td>
                                         <td>imagen</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -597,8 +597,8 @@
                                             independientemente de la ubicación geográfica en la que éstos se encuentren, para poder controlar estos dispositivos de forma remota, compartir escritorios y trasferir todo tipo de archivos, 
                                             en forma trasparente, sencilla y rápida.</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -607,8 +607,8 @@
                                         <td>Imagen</td>
                                         <td>Cuando comenzamos por primera vez en nuestra vida a utilizar una computadora, no sólo debemos aprender sacarle el máximo provecho, sino también debemos tomar ciertos recaudos para evitar tener que enfrentarnos a problemas en el futuro.</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -617,8 +617,8 @@
                                         <td>Imagen</td>
                                         <td>¿Has limpiado alguna vez tu ordenador por dentro? Si no lo has hecho nunca, da por seguro que estará lleno de suciedad. Te enseñamos el mejor método y todos los trucos que necesitas saber para limpiar a fondo tu ordenador y mejorar las temperaturas de funcionamiento</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
 
@@ -627,8 +627,8 @@
                                         <td>Imagen</td>
                                         <td>Windows 10 es el sistema operativo mayoritario en todo el mundo. Sin embargo, gran parte de sus usuarios registra lentitud en su PC con el paso del tiempo. Si quieres acelerar el funcionamiento de tu ordenador con W10, puedes hacerlo gracias a la herramienta de limpieza de software del sistema.</td>
                                         <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button">Eliminar</a>
+                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -637,6 +637,30 @@
                         <!--<div class="tab-pane fade" id="banner">
                             <h2>Banners</h2>
                         </div>-->
+                        
+
+
+                        <!--MODAL UPDATE-->
+                        <div class="modal fade" id="contenidoModalU" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Actualizar</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" class="btn btn-primary">Guardar</a>
+                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
             </div>
         </div>
