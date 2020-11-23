@@ -27,7 +27,7 @@
             <div class="col-12 col-md-9 col-lg-10">
                 <h1>Panel de Control</h1>
             </div>
-            <div class="col-12 col-md-3 col-lg-2">
+            <div class="col-12 col-md-3 col-lg-2 mt-2">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Usuario
