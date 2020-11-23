@@ -661,6 +661,25 @@
                             </div>
                         </div>
 
+                        <!--MODAL DELETE-->
+                        <div class="modal fade" id="contenidoModalD" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">¿Deseas Borrar?</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" class="btn btn-primary">Borrar</a>
+                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
                 </div>
             </div>
         </div>
