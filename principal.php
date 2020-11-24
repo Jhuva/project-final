@@ -54,9 +54,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
-                        
+                    <form method="post">
+                        <div class="form-group">
+                            <p>Nombre de usuario</p>
+                            <input type="text" class="form-control" id="usuario">
+                        </div>
+                        <div class="form-group">
+                            <p>Contraseña</p>
+                            <input type="password" class="form-control" id="contraseña">
+                        </div>
                     </form>
+                    <small class="form-text text-muted">Recuerde en no estar compartiendo su clave</small>
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-primary">Registrar</a>
