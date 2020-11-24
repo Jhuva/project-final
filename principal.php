@@ -32,7 +32,7 @@
                         Usuario
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Crear nuevo</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#contenidoModalR">Crear nuevo</a>
                             <a class="dropdown-item" href="cerrarSesion.php">Salir</a>
                         </div>
                     </div>
@@ -40,6 +40,34 @@
             </div>
         </div>
     </div>
+
+    <!--MODAL REGISTRAR USUARIO-->
+
+
+    <div class="modal fade" id="contenidoModalR" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Crea a un Nuevo administrador</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary">Registrar</a>
+                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <section class="container">
         <div class="row">
             <div class="col col-md-3">
