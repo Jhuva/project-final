@@ -49,7 +49,6 @@
 
     <!--MODAL REGISTRAR USUARIO-->
 
-
     <div class="modal fade" id="contenidoModalR" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -63,25 +62,27 @@
                     <form method="post">
                         <div class="form-group">
                             <p>Nombre de usuario</p>
-                            <input type="text" class="form-control" id="usuario">
+                            <input type="text" class="form-control" name="usuario">
                         </div>
                         <div class="form-group">
                             <p>Contraseña</p>
-                            <input type="password" class="form-control" id="contraseña">
+                            <input type="password" class="form-control" name="contraseña">
                         </div>
                     </form>
                     <small class="form-text text-muted">Recuerde en no estar compartiendo su clave</small>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-primary">Registrar</a>
+                    <button type="submit" class="btn btn-primary" name="registrar">Registrar</button>
                     <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
                 </div>
             </div>
         </div>
     </div>
 
-
-
+    <?php
+        include("registrar.php");
+    ?>
+    
     <section class="container">
         <div class="row">
             <div class="col col-md-3">
