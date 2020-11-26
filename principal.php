@@ -8,6 +8,8 @@
 
     include("db.php");
 
+    $producto = "SELECT * FROM producto";
+
 ?>
 
 
@@ -82,6 +84,7 @@
         </div>
     </div>
 
+    <!--MENU-->
 
     <section class="container">
         <div class="row">
@@ -181,46 +184,7 @@
                                             <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
                                     </tr>
-
-                                    <tr>
-                                        <td>Core i3</td>
-                                        <td>PC HP 6300 PRO Core I3 (3ºGen) + LED DE 19" HP</td>
-                                        <td>imagen</td>
-                                        <td>
-                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Core i3</td>
-                                        <td>PC Core i3 3.2GHZ HP 8300 Elite (5ta.Gen)</td>
-                                        <td>imagen</td>
-                                        <td>
-                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Core i5</td>
-                                        <td>AIO Lenovo E72Z core i5 - 3° Gen</td>
-                                        <td>imagen</td>
-                                        <td>
-                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Core i3</td>
-                                        <td>AIO Lenovo M70z Core i3 3.2Ghz</td>
-                                        <td>imagen</td>
-                                        <td>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
-                                        </td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
 
