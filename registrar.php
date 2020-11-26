@@ -6,7 +6,7 @@ if (isset($_POST['registrar'])) {
     if (strlen($_POST['usuario']) >=1 && strlen($_POST['contraseña']) >=1) {
         $usuario = $_POST["usuario"];
         $contraseña = $_POST["contraseña"];
-
+        //fechareg = date("d/m/y")
         $insertar = "INSERT INTO administrador(usuario, contraseña) VALUES ('$usuario', '$contraseña')";
         $resultado = mysqli_query($conexion, $insertar);
 
@@ -16,7 +16,10 @@ if (isset($_POST['registrar'])) {
             return "error";
         }
     } else {
-        echo "<script>alert('Debe de completar todos los campos')</script>";
+        echo "<script>
+              alert('Debe de completar todos los campos');
+              window.history.go(-1);
+              </script>";
     }
 }
 
