@@ -193,7 +193,7 @@
                                         </td>
 
                                         <?php 
-                                            } 
+                                            } mysqli_free_result($resultado);
                                         ?>
 
                                     </tr>
