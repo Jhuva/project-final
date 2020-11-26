@@ -9,7 +9,7 @@ $_SESSION['usuario']=$usuario;
 
 $conexion=mysqli_connect("localhost", "root", "", "ecommerce_db");
 
-$consulta="SELECT*FROM administrator where usuario='$usuario' and contraseña='$contraseña'";
+$consulta="SELECT*FROM administrador where usuario='$usuario' and contraseña='$contraseña'";
 $resultado=mysqli_query($conexion, $consulta);
 
 $filas=mysqli_num_rows($resultado);

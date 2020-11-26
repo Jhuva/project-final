@@ -1,33 +1,22 @@
 <?php
 
-include("db.php");
+include_once("db.php");
 
 if (isset($_POST['registrar'])) {
-    if (strlen ($_POST['usuario']) >= 1 && strlen ($_POST['contraseña']) >= 1) {
-        $usuario = trim($_POST['usuario']);
-        $contraseña = trim($_POST['contraseña']);
-        $fechareg = date("d/m/y");
-        $consulta = "INSERT INTO administrator(usuario, contraseña, fecha) VALUES ('$usuario','$contraseña','$fechareg')";
-        $resultado = mysqli_query($conex,$consulta);
-        if ($resultado) {
-            ?>
-                <div class="alert alert-primary">
-                    ¡Te has inscrito correctamente!
-                </div>
-            <?php
+    if (strlen($_POST['usuario']) >=1 && strlen($_POST['contraseña']) >=1) {
+        $usuario = $_POST["usuario"];
+        $contraseña = $_POST["contraseña"];
+
+        $insertar = "INSERT INTO administrador(usuario, contraseña) VALUES ('$usuario', '$contraseña')";
+        $resultado = mysqli_query($conexion, $insertar);
+
+        if($resultado) {
+            header("location:principal.php");
         } else {
-            ?>
-                <div class="alert alert-warning">
-                    ¡Ups! Ha ocurrido un error
-                </div>
-            <?php
+            return "error";
         }
     } else {
-        ?>
-            <div class="alert alert-warning">
-                ¡Por favor complete los campos!
-            </div>
-        <?php
+        echo "<script>alert('Debe de completar todos los campos')</script>";
     }
 }
 

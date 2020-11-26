@@ -5,6 +5,9 @@
         header("location:login.php");
         die();
     }
+
+    include("db.php");
+
 ?>
 
 
@@ -50,7 +53,7 @@
     <!--MODAL REGISTRAR USUARIO-->
 
     <div class="modal fade" id="contenidoModalR" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Crea a un Nuevo administrador</h4>
@@ -59,7 +62,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post">
+                    <form action="registrar.php" method="POST">
                         <div class="form-group">
                             <p>Nombre de usuario</p>
                             <input type="text" class="form-control" name="usuario">
@@ -68,21 +71,18 @@
                             <p>Contraseña</p>
                             <input type="password" class="form-control" name="contraseña">
                         </div>
+                        <small class="form-text text-muted">Recuerde en no estar compartiendo su clave</small>
+                        <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" name="registrar">Registrar</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        </div>
                     </form>
-                    <small class="form-text text-muted">Recuerde en no estar compartiendo su clave</small>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" name="registrar">Registrar</button>
-                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <?php
-        include("registrar.php");
-    ?>
-    
+
     <section class="container">
         <div class="row">
             <div class="col col-md-3">
