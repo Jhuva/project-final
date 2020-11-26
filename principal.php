@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="precio">Precio</label>
-                                    <input class="form-control form-control-sm" type="text" id="precio" name="precio" placeholder="Escribe el precio...">
+                                    <input class="form-control form-control-sm" type="number" id="precio" name="precio" placeholder="Escribe el precio...">
                                 </div>
                                 <p>Seleccione imagen<p>
                                 <div class="custom-file">
