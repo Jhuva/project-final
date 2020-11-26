@@ -171,18 +171,31 @@
                                         <th>Categoría</th>
                                         <th>Título</th>
                                         <th>Galería</th>
+                                        <th>Precio</th>
                                         <th>Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+
+                                    <?php
+                                        $resultado = mysqli_query($conexion, $producto);
+                                        while($mostrar=mysqli_fetch_assoc($resultado)){
+                                    ?>
+
                                     <tr>
-                                        <td>Core i3</td>
-                                        <td>PC Core i3 3.2GHZ HP 8300 Elite (5ta.Gen)</td>
-                                        <td>imagen</td>
+                                        <td><?php echo $mostrar["categoria"]?></td>
+                                        <td><?php echo $mostrar["titulo"]?></td>
+                                        <td><?php echo $mostrar["image"]?></td>
+                                        <td><?php echo $mostrar["precio"]?></td>
                                         <td>
                                         <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
                                             <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
                                         </td>
+
+                                        <?php 
+                                            } 
+                                        ?>
+
                                     </tr>
                                     
                                 </tbody>
