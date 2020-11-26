@@ -130,39 +130,40 @@
 
                         <div class="tab-pane fade show active" id="computadoras">
                             <h2>Computadoras</h2>
-                            <div class="form-group mt-4 pt-2">
-                                <label for="seleccion">Categoría</label>
-                                <select name="seleccion" id="seleccion" class="form-control">
-                                    <option value="">Core i3</option>
-                                    <option value="">Core i5</option>
-                                    <option value="">Core i7</option>
-                                    <option value="">Dual Core</option>
-                                    <option value="">Penitum 4</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="titulo">Título</label>
-                                <input class="form-control form-control-sm" type="text" id="titulo" name="titulo" placeholder="Escribe el título...">
-                            </div>
-                            <div class="form-group">
-                                <label for="mensaje">Descripción del Artículo</label>
-                                <textarea class="form-control" type="text" id="descripción" name="descripción" placeholder="Escriba la descripción..."></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="mensaje">Contenido del Artículo</label>
-                                <textarea class="form-control" type="text" id="contenido" name="contenido" placeholder="Escriba el contenido..."></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="precio">Precio</label>
-                                <input class="form-control form-control-sm" type="text" id="precio" name="precio" placeholder="Escribe el precio...">
-                            </div>
-                            <p>Seleccione imagen<p>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="elegirArchivo" lang="es">
-                                <label class="custom-file-label" for="elegirArchivo">Seleccionar Archivo</label>
-                            </div>
-                            <input type="submit" class="btn btn-primary mt-4" value="Agregar">
-
+                            <form action="registrar.php" method="POST">
+                                <div class="form-group mt-4 pt-2">
+                                    <label for="seleccion">Categoría</label>
+                                    <select name="seleccion" id="seleccion" class="form-control">
+                                        <option value="">Core i3</option>
+                                        <option value="">Core i5</option>
+                                        <option value="">Core i7</option>
+                                        <option value="">Dual Core</option>
+                                        <option value="">Penitum 4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="titulo">Título</label>
+                                    <input class="form-control form-control-sm" type="text" id="titulo" name="titulo" placeholder="Escribe el título...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mensaje">Descripción del Artículo</label>
+                                    <textarea class="form-control" type="text" id="descripción" name="descripción" placeholder="Escriba la descripción..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mensaje">Contenido del Artículo</label>
+                                    <textarea class="form-control" type="text" id="contenido" name="contenido" placeholder="Escriba el contenido..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="precio">Precio</label>
+                                    <input class="form-control form-control-sm" type="text" id="precio" name="precio" placeholder="Escribe el precio...">
+                                </div>
+                                <p>Seleccione imagen<p>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="elegirArchivo" lang="es">
+                                    <label class="custom-file-label" for="elegirArchivo">Seleccionar Archivo</label>
+                                </div>
+                                <input type="submit" class="btn btn-primary mt-4" value="Agregar">
+                            </form>
                             <!--TABLE-->
 
                             <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm">
