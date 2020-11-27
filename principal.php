@@ -8,7 +8,7 @@
 
     include("db.php");
 
-    $producto = "SELECT * FROM producto";
+    $productos = "SELECT * FROM productos";
 
 ?>
 
@@ -130,7 +130,7 @@
 
                         <div class="tab-pane fade show active" id="computadoras">
                             <h2>Computadoras</h2>
-                            <form action="registrar.php" method="POST">
+                            <form action="registrar.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group mt-4 pt-2">
                                     <label for="seleccion">Categoría</label>
                                     <select name="seleccion" id="seleccion" class="form-control">
@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="mensaje">Descripción del Artículo</label>
-                                    <textarea class="form-control" type="text" id="descripción" name="descripción" placeholder="Escriba la descripción..."></textarea>
+                                    <textarea class="form-control" type="text" id="descripción" name="descripcion" placeholder="Escriba la descripción..."></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="mensaje">Contenido del Artículo</label>
@@ -159,10 +159,10 @@
                                 </div>
                                 <p>Seleccione imagen<p>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="elegirArchivo" lang="es">
+                                    <input type="file" class="custom-file-input" id="elegirArchivo" lang="es" name="imagen">
                                     <label class="custom-file-label" for="elegirArchivo">Seleccionar Archivo</label>
                                 </div>
-                                <input type="submit" class="btn btn-primary mt-4" value="Agregar">
+                                <input type="submit" class="btn btn-primary mt-4" value="Agregar" name="guardar">
                             </form>
                             <!--TABLE-->
 
@@ -179,14 +179,16 @@
                                 <tbody>
 
                                     <?php
-                                        $resultado = mysqli_query($conexion, $producto);
+                                        $resultado = mysqli_query($conexion, $productos);
                                         while($mostrar=mysqli_fetch_assoc($resultado)){
                                     ?>
 
                                     <tr>
                                         <td><?php echo $mostrar["categoria"]?></td>
                                         <td><?php echo $mostrar["titulo"]?></td>
-                                        <td><?php echo $mostrar["image"]?></td>
+                                        <td>
+                                            <img width="70px" src="data:image/jpg;base64, <?php echo base64_encode($mostrar["imagen"]);?>">
+                                        </td>
                                         <td><?php echo $mostrar["precio"]?></td>
                                         <td>
                                         <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
