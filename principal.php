@@ -90,25 +90,25 @@
         <div class="row">
             <div class="col col-md-3">
                 <div class="productos mt-5 mb-4">
-                    <ul class="nav flex-column nav-pills" id="myTab" role="tablist" aria-orientation="vertical">
+                    <ul class="nav flex-column nav-pills" id="myTab" role="tablist" aria-orientation="vertical" name="lista1">
                         <li class="nav-item">
-                            <a href="#computadoras" id="computadoras-tab" class="nav-link active" data-toggle="tab">Computadoras</a>
+                            <a href="#computadoras" id="computadoras-tab" class="nav-link active" data-toggle="tab" value="1">Computadoras</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#portatiles" id="portatiles-tab" class="nav-link" data-toggle="tab">Portátiles</a>
+                            <a href="#portatiles" id="portatiles-tab" class="nav-link" data-toggle="tab" value="2">Portátiles</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#impresoras" id="impresoras-tab" class="nav-link" data-toggle="tab">Impresoras</a>
+                            <a href="#impresoras" id="impresoras-tab" class="nav-link" data-toggle="tab" value="3">Impresoras</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#monitores" id="monitores-tab" class="nav-link" data-toggle="tab">Monitores</a>
+                            <a href="#monitores" id="monitores-tab" class="nav-link" data-toggle="tab" value="4">Monitores</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#cpu" id="cpu-tab" class="nav-link" data-toggle="tab">CPU</a>
+                            <a href="#cpu" id="cpu-tab" class="nav-link" data-toggle="tab" value="5">CPU</a>
                         </li>
 
                         <li class="nav-item">
@@ -133,12 +133,24 @@
                             <form action="registrar.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group mt-4 pt-2">
                                     <label for="seleccion">Categoría</label>
-                                    <select name="seleccion" id="seleccion" class="form-control">
-                                        <option value="">Core i3</option>
-                                        <option value="">Core i5</option>
-                                        <option value="">Core i7</option>
-                                        <option value="">Dual Core</option>
-                                        <option value="">Penitum 4</option>
+                                    <select name="seleccionlista2" id="seleccionlista2" class="form-control">
+                                    <option value="">Core i3</option>
+                                    <option value="">Core i5</option>
+                                    <option value="">Core i7</option>
+                                    <option value="">Dual Core</option>
+                                    <option value="">Penitum 4</option>
+                                
+                                    <?php
+                                    // CODIGO INVALIDOS
+                                        /*$consulta = "SELECT * FROM categoria";
+                                        $ejecutar = mysqli_query($conexion,$consulta) or die (mysqli_error($conexion));
+                                    ?>
+
+                                    <?php foreach ($ejecutar as $opciones): ?>
+
+                                        <option value="<?php echo $opciones ['nombre_cat'] ?>"><?php echo $opciones ['nombre_cat'] ?></option>
+
+                                     <?php endforeach */ ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -179,7 +191,7 @@
                                 <tbody>
 
                                     <?php
-                                        $resultado = mysqli_query($conexion, $productos);
+                                        $resultado = mysqli_query($conexion, $productos) or die (mysqli_error($conexion));
                                         while($mostrar=mysqli_fetch_assoc($resultado)){
                                     ?>
 
@@ -580,7 +592,7 @@
                             </table>
                         </div>
 
-                        <div class="tab-pane fade" id="blog">
+                        <!--<div class="tab-pane fade" id="blog">
                             <h2>Administra tus Blogs</h2>
                             <div class="form-group mt-4 pt-2">
                                 <label for="titulo">Título</label>
@@ -601,7 +613,7 @@
                             </div>
                             <input type="submit" class="btn btn-primary mt-4" value="Agregar">
 
-                            <!--TABLE-->
+                            TABLE
 
                             <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm">
                                 <thead>
@@ -656,7 +668,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div>-->
                         <!--<div class="tab-pane fade" id="banner">
                             <h2>Banners</h2>
                         </div>-->
@@ -721,5 +733,28 @@
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            recargarLista();
+
+            $('#myTab').change(function(){
+                recargarLista();
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        function recargarLista(){
+            $.ajax({
+                type:"POST",
+                url: "principal.php",
+                data: "categoria=" + $('#myTab').val(),
+                succes:function(r){
+                    $('#seleccionlista2').html(r);
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>
