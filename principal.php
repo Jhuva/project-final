@@ -9,7 +9,11 @@
     include("db.php");
 
     $productos = "SELECT * FROM productos";
-
+    
+    // Codigo para hacer el menu dinamico con php
+    
+    $categoria = "SELECT * FROM categoria";
+    $consulta1 = mysqli_query($categoria,$conexion);
 ?>
 
 
@@ -111,13 +115,14 @@
                             <a href="#cpu" id="cpu-tab" class="nav-link" data-toggle="tab">CPU</a>
                         </li>
 
+                        <!--
                         <li class="nav-item">
                             <a href="#blog" id="blog-tab" class="nav-link" data-toggle="tab">Blog</a>
                         </li>
 
                         <li class="nav-item">
                             <a href="#banner" id="banner-tab" class="nav-link" data-toggle="tab">Banner</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
