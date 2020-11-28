@@ -13,7 +13,7 @@
     // Codigo para hacer el menu dinamico con php
     
     $categoria = "SELECT * FROM categoria";
-    $consulta1 = mysqli_query($categoria,$conexion);
+    $consulta1 = mysqli_query($conexion,$categoria);
 ?>
 
 
@@ -95,25 +95,15 @@
             <div class="col col-md-3">
                 <div class="productos mt-5 mb-4">
                     <ul class="nav flex-column nav-pills" id="myTab" role="tablist" aria-orientation="vertical">
-                        <li class="nav-item">
-                            <a href="#computadoras" id="computadoras-tab" class="nav-link active" data-toggle="tab">Computadoras</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a href="#portatiles" id="portatiles-tab" class="nav-link" data-toggle="tab">Portátiles</a>
-                        </li>
+                    <?php while($fila = mysqli_fetch_array($consulta1)){?>
 
-                        <li class="nav-item">
-                            <a href="#impresoras" id="impresoras-tab" class="nav-link" data-toggle="tab">Impresoras</a>
+                        <li class="nav-item mt-1">
+                            <a href="principal.php?codigo=<?php echo $fila['id_cat'] ?>" title=" <?php echo $fila10['nombre_cat']?>" id="computadoras-tab" class="nav-link" data-toggle="tab"><?php echo $fila['nombre_cat']?></a>
                         </li>
+                        
+                    <?php } ?>
 
-                        <li class="nav-item">
-                            <a href="#monitores" id="monitores-tab" class="nav-link" data-toggle="tab">Monitores</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#cpu" id="cpu-tab" class="nav-link" data-toggle="tab">CPU</a>
-                        </li>
 
                         <!--
                         <li class="nav-item">
