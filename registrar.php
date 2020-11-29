@@ -25,7 +25,7 @@ if (isset($_POST['registrar'])) {
 
 // INSERTAR EL FORMULARIOS DE LOS PRODUCTOS.
 
-$seleccion = $_POST['seleccion'];
+$seleccionlista2 = $_POST['seleccion'];
 $titulo = $_POST['titulo'];
 $descripcion = $_POST['descripcion'];
 $contenido = $_POST['contenido'];
