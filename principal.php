@@ -8,7 +8,14 @@
 
     include("db.php");
 
-    $productos = "SELECT * FROM productos";
+    $productos = "SELECT categoria.nombre_cat,
+                        det_categoria.nombre_det,
+                        productos.titulo,
+                        productos.precio,
+                        productos.imagen
+                FROM categoria INNER JOIN det_categoria
+                on categoria.id_cat=det_categoria.id_cat
+                INNER JOIN productos on det_categoria.id_det=productos.id_det_categoria;";
     
     // Codigo para hacer el menu dinamico con php
     
@@ -128,7 +135,7 @@
                         <!--FORMULARIO-->
 
                         <div class="tab-pane fade show active" id="computadoras">
-                            <h2>Agregar Articulo</h2>
+                            <h2>Agregar Artículo</h2>
                             <form action="registrar.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group mt-4 pt-2">
                                     <label for="seleccion">Categoría</label>
@@ -186,6 +193,7 @@
                                 <thead>
                                     <tr class="table-primary">
                                         <th>Categoría</th>
+                                        <th>Detalle</th>
                                         <th>Título</th>
                                         <th>Galería</th>
                                         <th>Precio</th>
@@ -200,7 +208,8 @@
                                     ?>
 
                                     <tr>
-                                        <td><?php echo $mostrar["categoria"]?></td>
+                                        <td><?php echo $mostrar["nombre_cat"]?></td>
+                                        <td><?php echo $mostrar["nombre_det"]?></td>
                                         <td><?php echo $mostrar["titulo"]?></td>
                                         <td>
                                             <img width="70px" src="data:image/jpg;base64, <?php echo base64_encode($mostrar["imagen"]);?>">
