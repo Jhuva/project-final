@@ -94,15 +94,19 @@
         <div class="row">
             <div class="col col-md-3">
                 <div class="productos mt-5 mb-4">
+
                     <ul class="nav flex-column nav-pills" id="myTab" role="tablist" aria-orientation="vertical">
 
                     <?php while($fila = mysqli_fetch_array($consulta1)){?>
 
                         <li class="nav-item mt-1">
                             <a href="principal.php?codigo=<?php echo $fila['id_cat'] ?>" title=" <?php echo $fila['nombre_cat']?>" id="computadoras-tab" class="nav-link"><?php echo $fila['nombre_cat']?></a>
+
                         </li>
                         
                     <?php } ?>
+
+
 
 
                         <!--
@@ -191,7 +195,7 @@
                                 <tbody>
 
                                     <?php
-                                        $resultado = mysqli_query($conexion, $productos);
+                                        $resultado = mysqli_query($conexion, $productos) or die (mysqli_error($conexion));
                                         while($mostrar=mysqli_fetch_assoc($resultado)){
                                     ?>
 
@@ -217,6 +221,7 @@
                             </table>
 
                         </div>
+
 
 
                         <!--MODAL UPDATE-->
