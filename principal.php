@@ -44,25 +44,23 @@
 
     
 
-    <div class="container">
-        <div class="row mt-4 pt-4 pl-4 mb-4 pb-4 bg-danger text-light">
-            <div class="col-12 col-md-9 col-lg-10">
-                <h1>Panel de Control</h1>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 mt-2">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Usuario
-                    </button>                 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#contenidoModalR">Crear nuevo</a>
-                        <a class="dropdown-item" href="cerrarSesion.php">Salir</a>
-                    </div>
-                
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="col-12 col-md-9 col-lg-10">
+            <h1 class="text-secondary">Panel de Administración</h1>
+        </div>
+        <div class="col-12 col-md-3 col-lg-2 mt-2">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Usuario
+                </button>                 
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#contenidoModalR">Crear nuevo</a>
+                    <a class="dropdown-item" href="cerrarSesion.php">Salir</a>
                 </div>
+                
             </div>
         </div>
-    </div>
+    </nav>
 
     <!--MODAL REGISTRAR USUARIO-->
 
@@ -94,6 +92,23 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container mt-3">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active text-uppercase" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#">Agregar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#">Proveedores</a>
+            </li>
+        </ul>
     </div>
 
     <!--MENU-->
