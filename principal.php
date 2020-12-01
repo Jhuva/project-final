@@ -34,6 +34,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -189,7 +190,7 @@
                             </form>
                             <!--TABLE-->
 
-                            <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm">
+                            <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_id">
                                 <thead>
                                     <tr class="table-primary">
                                         <th>Categoría</th>
@@ -291,5 +292,13 @@
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+        $('#table_id').DataTable();
+        } );
+    </script>
+
+
 </body>
 </html>
