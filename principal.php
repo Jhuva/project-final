@@ -95,16 +95,13 @@
     </div>
 
     <section class="container mt-3">
-        <div class="row">
+        <div class="row mb-4">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active text-uppercase" href="#inicio" data-toggle="tab">Inicio</a>
+                    <a class="nav-link active text-uppercase" href="#agregar" data-toggle="tab">Agregar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#productos" data-toggle="tab">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="#agregar" data-toggle="tab">Agregar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#proveedores" data-toggle="tab">Proveedores</a>
@@ -115,8 +112,8 @@
 
         <!--MENU-->
 
-        <div class="row tab-content">
-            <div class="tab-pane fade" id="agregar">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="agregar">
                 <div class="row">
                     <div class="col col-md-3">
                         <div class="ariculos mt-5 mb-4">
@@ -148,7 +145,7 @@
                     </div>    
 
                     <div class="col col-md-9">
-                        <div class="list-product mt-5 mb-4">
+                        <div class="list-product mt-5 mb-5">
                         
 
                             <!--FORMULARIO-->
@@ -215,7 +212,7 @@
             
             <!--TABLE-->
 
-            <div class="tab-pane fade" id="productos">
+            <div class="tab-pane fade pt-5 mb-5" id="productos">
                 <div class="col">
             
                     <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_id">
@@ -299,6 +296,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="tab-pane fade pt-5 mb-5" id="proveedores">
+                <h1>Aqui van los proveedores</h1>
             </div>
         </div>
     </section>
