@@ -94,201 +94,210 @@
         </div>
     </div>
 
-    <div class="container mt-3">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active text-uppercase" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#">Productos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#">Agregar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#">Proveedores</a>
-            </li>
-        </ul>
-    </div>
-
-    <!--MENU-->
-
-    <section class="container">
+    <section class="container mt-3">
         <div class="row">
-            <div class="col col-md-3">
-                <div class="productos mt-5 mb-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active text-uppercase" href="#inicio" data-toggle="tab">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="#productos" data-toggle="tab">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="#agregar" data-toggle="tab">Agregar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="#proveedores" data-toggle="tab">Proveedores</a>
+                </li>
+            </ul>
+        </div>
+    
 
-                    <ul class="nav flex-column nav-pills" id="myTab" role="tablist" aria-orientation="vertical">
+        <!--MENU-->
 
-                    <?php while($fila = mysqli_fetch_array($consulta1)){?>
+        <div class="row tab-content">
+            <div class="tab-pane fade" id="agregar">
+                <div class="row">
+                    <div class="col col-md-3">
+                        <div class="ariculos mt-5 mb-4">
 
-                        <li class="nav-item mt-1">
-                            <a href="principal.php?codigo=<?php echo $fila['id_cat'] ?>" title=" <?php echo $fila['nombre_cat']?>" id="computadoras-tab" class="nav-link"><?php echo $fila['nombre_cat']?></a>
+                            <ul class="nav flex-column nav-pills" id="myTab" role="tablist" aria-orientation="vertical">
 
-                        </li>
+                            <?php while($fila = mysqli_fetch_array($consulta1)){?>
+
+                                <li class="nav-item mt-1">
+                                    <a href="principal.php?codigo=<?php echo $fila['id_cat'] ?>" title=" <?php echo $fila['nombre_cat']?>" id="computadoras-tab" class="nav-link"><?php echo $fila['nombre_cat']?></a>
+
+                                </li>
                         
-                    <?php } ?>
+                            <?php } ?>
 
 
 
 
-                        <!--
-                        <li class="nav-item">
-                            <a href="#blog" id="blog-tab" class="nav-link" data-toggle="tab">Blog</a>
-                        </li>
+                                <!--
+                                <li class="nav-item">
+                                <a href="#blog" id="blog-tab" class="nav-link" data-toggle="tab">Blog</a>
+                                </li>
 
-                        <li class="nav-item">
-                            <a href="#banner" id="banner-tab" class="nav-link" data-toggle="tab">Banner</a>
-                        </li>-->
-                    </ul>
-                </div>
-            </div>
+                                <li class="nav-item">
+                                <a href="#banner" id="banner-tab" class="nav-link" data-toggle="tab">Banner</a>
+                                </li>-->
+                            </ul>
+                        </div>
+                    </div>    
 
-            <div class="col col-md-9">
-                <div class="list-product mt-5 mb-4">
-                    <div class="tab-content ml-4 mr-4">
+                    <div class="col col-md-9">
+                        <div class="list-product mt-5 mb-4">
+                        
 
-                        <!--FORMULARIO-->
+                            <!--FORMULARIO-->
 
-                        <div class="tab-pane fade show active" id="computadoras">
-                            <h2>Agregar Artículo</h2>
-                            <form action="registrar.php" method="POST" enctype="multipart/form-data">
-                                <div class="form-group mt-4 pt-2">
-                                    <label for="seleccion">Categoría</label>
+                                <h2>Agregar Artículo</h2>
+                                <form action="registrar.php" method="POST" enctype="multipart/form-data">
+                                    <div class="form-group mt-4 pt-2">
+                                        <label for="seleccion">Categoría</label>
 
-                                    <?php
+                                        <?php
 
-                                    if(isset($_GET['codigo'])){
-                                        $codigo = $_GET['codigo'];
-                                    } else {
-                                        $codigo=1;
-                                    }
+                                        if(isset($_GET['codigo'])){
+                                            $codigo = $_GET['codigo'];
+                                        } else {
+                                            $codigo=1;
+                                        }
                                     
-                                    $detCategoria = "SELECT * FROM det_categoria WHERE id_cat=$codigo";
-                                    $consulta2=mysqli_query($conexion,$detCategoria);
+                                        $detCategoria = "SELECT * FROM det_categoria WHERE id_cat=$codigo";
+                                        $consulta2=mysqli_query($conexion,$detCategoria);
 
-                                    ?>
-
-
-                                    <select name="seleccion" id="seleccion" class="form-control">
-
-                                    <?php while($fila1 = mysqli_fetch_array($consulta2)) {?>
-
-                                        <option value="<?php echo $fila1['id_det']; ?>"><?php echo utf8_encode($fila1['nombre_det'])?></option>
-
-
-                                    <?php } ?>    
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="titulo">Título</label>
-                                    <input class="form-control form-control-sm" type="text" id="titulo" name="titulo" placeholder="Escribe el título...">
-                                </div>
-                                <div class="form-group">
-                                    <label for="mensaje">Descripción del Artículo</label>
-                                    <textarea class="form-control" type="text" id="descripción" name="descripcion" placeholder="Escriba la descripción..."></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="mensaje">Contenido del Artículo</label>
-                                    <textarea class="form-control" type="text" id="contenido" name="contenido" placeholder="Escriba el contenido..."></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="precio">Precio</label>
-                                    <input class="form-control form-control-sm" type="number" id="precio" name="precio" placeholder="Escribe el precio...">
-                                </div>
-                                <p>Seleccione imagen<p>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="elegirArchivo" lang="es" name="imagen">
-                                    <label class="custom-file-label" for="elegirArchivo">Seleccionar Archivo</label>
-                                </div>
-                                <input type="submit" class="btn btn-primary mt-4" value="Agregar" name="guardar">
-                            </form>
-                            <!--TABLE-->
-
-                            <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_id">
-                                <thead>
-                                    <tr class="table-primary">
-                                        <th>Categoría</th>
-                                        <th>Detalle</th>
-                                        <th>Título</th>
-                                        <th>Galería</th>
-                                        <th>Precio</th>
-                                        <th>Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <?php
-                                        $resultado = mysqli_query($conexion, $productos) or die (mysqli_error($conexion));
-                                        while($mostrar=mysqli_fetch_assoc($resultado)){
-                                    ?>
-
-                                    <tr>
-                                        <td><?php echo $mostrar["nombre_cat"]?></td>
-                                        <td><?php echo $mostrar["nombre_det"]?></td>
-                                        <td><?php echo $mostrar["titulo"]?></td>
-                                        <td>
-                                            <img width="70px" src="data:image/jpg;base64, <?php echo base64_encode($mostrar["imagen"]);?>">
-                                        </td>
-                                        <td><?php echo $mostrar["precio"]?></td>
-                                        <td>
-                                        <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
-                                        </td>
-
-                                        <?php 
-                                            } mysqli_free_result($resultado);
                                         ?>
 
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
 
-                        </div>
+                                        <select name="seleccion" id="seleccion" class="form-control">
+
+                                        <?php while($fila1 = mysqli_fetch_array($consulta2)) {?>
+
+                                            <option value="<?php echo $fila1['id_det']; ?>"><?php echo utf8_encode($fila1['nombre_det'])?></option>
 
 
-
-                        <!--MODAL UPDATE-->
-                        <div class="modal fade" id="contenidoModalU" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Actualizar</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
+                                        <?php } ?>    
+                                        </select>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="titulo">Título</label>
+                                        <input class="form-control form-control-sm" type="text" id="titulo" name="titulo" placeholder="Escribe el título...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mensaje">Descripción del Artículo</label>
+                                        <textarea class="form-control" type="text" id="descripción" name="descripcion" placeholder="Escriba la descripción..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                     <label for="mensaje">Contenido del Artículo</label>
+                                        <textarea class="form-control" type="text" id="contenido" name="contenido" placeholder="Escriba el contenido..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="precio">Precio</label>
+                                        <input class="form-control form-control-sm" type="number" id="precio" name="precio" placeholder="Escribe el precio...">
+                                    </div>
+                                    <p>Seleccione imagen<p>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="elegirArchivo" lang="es" name="imagen">
+                                        <label class="custom-file-label" for="elegirArchivo">Seleccionar Archivo</label>
+                                    </div>
+                                    <input type="submit" class="btn btn-primary mt-4" value="Agregar" name="guardar">
+                                </form>
 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--MODAL DELETE-->
-                        <div class="modal fade" id="contenidoModalD" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">¿Deseas Borrar?</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="#" class="btn btn-primary">Borrar</a>
-                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--TABLE-->
 
+            <div class="tab-pane fade" id="productos">
+                <div class="col">
+            
+                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_id">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Categoría</th>
+                                <th>Detalle</th>
+                                <th>Título</th>
+                                <th>Galería</th>
+                                <th>Precio</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                                $resultado = mysqli_query($conexion, $productos) or die (mysqli_error($conexion));
+                                while($mostrar=mysqli_fetch_assoc($resultado)){
+                            ?>
+
+                            <tr>
+                                <td><?php echo $mostrar["nombre_cat"]?></td>
+                                <td><?php echo $mostrar["nombre_det"]?></td>
+                                <td><?php echo $mostrar["titulo"]?></td>
+                                <td>
+                                    <img width="70px" src="data:image/jpg;base64, <?php echo base64_encode($mostrar["imagen"]);?>">
+                                </td>
+                                <td><?php echo $mostrar["precio"]?></td>
+                                <td>
+                                <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
+                                </td>
+
+                                <?php 
+                                    } mysqli_free_result($resultado);
+                                ?>
+
+                            </tr>
+                                    
+                        </tbody>
+                    </table>
+
+
+
+                    <!--MODAL UPDATE-->
+                    <div class="modal fade" id="contenidoModalU" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Actualizar</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-primary">Guardar</a>
+                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--MODAL DELETE-->
+                    <div class="modal fade" id="contenidoModalD" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">¿Deseas Borrar?</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-primary">Borrar</a>
+                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
