@@ -8,6 +8,8 @@
 
     include("db.php");
 
+    //Variables para las tablas 
+
     $productos = "SELECT categoria.nombre_cat,
                         det_categoria.nombre_det,
                         productos.titulo,
@@ -16,6 +18,8 @@
                 FROM categoria INNER JOIN det_categoria
                 on categoria.id_cat=det_categoria.id_cat
                 INNER JOIN productos on det_categoria.id_det=productos.id_det_categoria;";
+    
+    $proveedores = "SELECT * FROM proveedores";
     
     // Codigo para hacer el menu dinamico con php
     
@@ -105,6 +109,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#proveedores" data-toggle="tab">Proveedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="#administradores" data-toggle="tab">Administradores</a>
                 </li>
             </ul>
         </div>
@@ -298,7 +305,88 @@
                 </div>
             </div>
             <div class="tab-pane fade pt-5 mb-5" id="proveedores">
-                <h1>Aqui van los proveedores</h1>
+                <div class="col">
+            
+                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_idpr">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Nombre</th>
+                                <th>Razon social</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>email</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                                $resultado1 = mysqli_query($conexion, $proveedores) or die (mysqli_error($conexion));
+                                while($mostrar=mysqli_fetch_assoc($resultado1)){
+                            ?>
+
+                            <tr>
+                                <td><?php echo $mostrar["nombre_prov"]?></td>
+                                <td><?php echo $mostrar["raz_social"]?></td>
+                                <td><?php echo $mostrar["direccion"]?></td>
+                                <td><?php echo $mostrar["telefono"]?></td>
+                                <td><?php echo $mostrar["email"]?></td>
+                                <td>
+                                <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
+                                </td>
+
+                                <?php 
+                                    } mysqli_free_result($resultado1);
+                                ?>
+
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+                    <!--MODAL UPDATE-->
+                    <div class="modal fade" id="contenidoModalU" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Actualizar</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-primary">Guardar</a>
+                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--MODAL DELETE-->
+                    <div class="modal fade" id="contenidoModalD" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">¿Deseas Borrar?</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-primary">Borrar</a>
+                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade pt-5 mb-5" id="administradores">
+            <h1>Aqui van los administradores</h1>
             </div>
         </div>
     </section>
@@ -323,6 +411,11 @@
         } );
     </script>
 
+    <script>
+        $(document).ready( function () {
+        $('#table_idpr').DataTable();
+        } );
+    </script>
 
 </body>
 </html>
