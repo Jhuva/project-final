@@ -306,8 +306,10 @@
             </div>
             <div class="tab-pane fade pt-5 mb-5" id="proveedores">
                 <div class="col">
-            
                     <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_idpr">
+                    
+                    <a href="#" class="btn btn-outline-secondary btn-md mb-4" role="button" data-toggle="modal" data-target="#agregarProveedor">Agregar</a>
+                        
                         <thead>
                             <tr class="table-primary">
                                 <th>Nombre</th>
@@ -332,8 +334,8 @@
                                 <td><?php echo $mostrar["telefono"]?></td>
                                 <td><?php echo $mostrar["email"]?></td>
                                 <td>
-                                <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalUpr">Actualizar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalDpr">Eliminar</a>
                                 </td>
 
                                 <?php 
@@ -346,32 +348,32 @@
                     </table>
 
                     <!--MODAL UPDATE-->
-                    <div class="modal fade" id="contenidoModalU" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                    <div class="modal fade" id="contenidoModalUpr" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Actualizar</h4>
+                                    <h4 class="modal-title">¿Quieres modificar algún dato?</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn btn-primary">Guardar</a>
-                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                    
+                                    <div class="modal-footer">
+                                        <a href="#" class="btn btn-primary">Guardar</a>
+                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!--MODAL DELETE-->
-                    <div class="modal fade" id="contenidoModalD" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                    <div class="modal fade" id="contenidoModalDpr" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">¿Deseas Borrar?</h4>
+                                    <h4 class="modal-title">¿Deseas Eliminarlo?</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -380,6 +382,51 @@
                                     <a href="#" class="btn btn-primary">Borrar</a>
                                     <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--MODAL AGREGAR PROVEEDOR-->
+
+                    <div class="modal fade" id="agregarProveedor" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">¿Un miembro más al grupo?</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                <form action="registrar.php" method="POST">
+                                    <div class="form-group">
+                                        <p>Nombre del Proveedor</p>
+                                        <input type="text" class="form-control" name="nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Razón Social</p>
+                                        <input type="text" class="form-control" name="razonSocial">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Dirección o Ubicación</p>
+                                        <input type="text" class="form-control" name="direccion">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Teléfono de contacto</p>
+                                        <input type="number" class="form-control" name="telefono">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Correo electrónico</p>
+                                        <input type="text" class="form-control" name="correo">
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" name="registrar">Registrar</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </form>
+                                
+                                </div> 
                             </div>
                         </div>
                     </div>
