@@ -399,7 +399,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                <form action="registrar.php" method="POST">
+                                <form action="agregarProveedores.php" method="POST">
                                     <div class="form-group">
                                         <p>Nombre del Proveedor</p>
                                         <input type="text" class="form-control" name="nombre">
