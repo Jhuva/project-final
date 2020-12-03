@@ -20,6 +20,7 @@
                 INNER JOIN productos on det_categoria.id_det=productos.id_det_categoria;";
     
     $proveedores = "SELECT * FROM proveedores";
+    $administradores = "SELECT * FROM administrador";
     
     // Codigo para hacer el menu dinamico con php
     
@@ -433,7 +434,79 @@
                 </div>
             </div>
             <div class="tab-pane fade pt-5 mb-5" id="administradores">
-            <h1>Aqui van los administradores</h1>
+                <div class="col">
+                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_idad">                    
+                        
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Usuario</th>
+                                <th>Contraseña</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                                $resultado2 = mysqli_query($conexion, $administradores) or die (mysqli_error($conexion));
+                                while($mostrar=mysqli_fetch_assoc($resultado2)){
+                            ?>
+
+                            <tr>
+                                <td><?php echo $mostrar["usuario"]?></td>
+                                <td><?php echo $mostrar["contraseña"]?></td>
+                                <td>
+                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalUad">Actualizar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalDad">Eliminar</a>
+                                </td>
+
+                                <?php 
+                                    } mysqli_free_result($resultado2);
+                                ?>
+
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+                    <!--MODAL UPDATE-->
+                    <div class="modal fade" id="contenidoModalUad" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">¿Quieres modificar algún dato?</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    <div class="modal-footer">
+                                        <a href="#" class="btn btn-primary">Guardar</a>
+                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--MODAL DELETE-->
+                    <div class="modal fade" id="contenidoModalDad" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">¿Deseas Eliminarlo?</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-primary">Borrar</a>
+                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -461,6 +534,12 @@
     <script>
         $(document).ready( function () {
         $('#table_idpr').DataTable();
+        } );
+    </script>
+
+    <script>
+        $(document).ready( function () {
+        $('#table_idad').DataTable();
         } );
     </script>
 
