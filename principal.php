@@ -159,7 +159,7 @@
                             <!--FORMULARIO-->
 
                                 <h2>Agregar Artículo</h2>
-                                <form action="registrar.php" method="POST" enctype="multipart/form-data">
+                                <form action="agregarProducto.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group mt-4 pt-2">
                                         <label for="seleccion">Categoría</label>
 

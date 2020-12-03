@@ -24,24 +24,3 @@ if (isset($_POST['registrar'])) {
 }
 
 ?>
-
-<?php
-// INSERTAR EL FORMULARIOS DE LOS PRODUCTOS.
-
-$seleccionlista2 = $_POST['seleccion'];
-$titulo = $_POST['titulo'];
-$descripcion = $_POST['descripcion'];
-$contenido = $_POST['contenido'];
-$precio = $_POST['precio'];
-$imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-
-$insertarP = "INSERT INTO productos(categoria, titulo, des_art, cont_art, precio, imagen) VALUES ('$seleccion','$titulo','$descripcion','$contenido','$precio','$imagen')";
-$resultado1 = mysqli_query($conexion, $insertarP);
-
-if($result) {
-    header("Location:principal.php");
-} else {
-    echo "No se pudo enviar";
-}
-
-?>
