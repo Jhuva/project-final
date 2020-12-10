@@ -276,11 +276,61 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                <form action="editarProducto.php" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" id="update_id">
+                                    <div class="form-group">
+                                        <label for="seleccion" id="categoria">Categoría</label>
 
-                                </div>
-                                <div class="modal-footer">
+                                        <?php
+
+                                        if(isset($_GET['codigo'])){
+                                            $codigo = $_GET['codigo'];
+                                        } else {
+                                            $codigo=1;
+                                        }
+                                    
+                                        $detCategoria = "SELECT * FROM det_categoria WHERE id_cat=$codigo";
+                                        $consulta2=mysqli_query($conexion,$detCategoria);
+
+                                        ?>
+
+
+                                        <select name="seleccion" id="seleccion" class="form-control">
+
+                                        <?php while($fila1 = mysqli_fetch_array($consulta2)) {?>
+
+                                            <option value="<?php echo $fila1['id_det']; ?>"><?php echo utf8_encode($fila1['nombre_det'])?></option>
+
+
+                                        <?php } ?>    
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="titulo">Título</label>
+                                        <input class="form-control form-control-sm" type="text" id="titulo" name="titulo" placeholder="Escribe el título...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mensaje">Descripción del Artículo</label>
+                                        <textarea class="form-control" type="text" id="descripción" name="descripcion" placeholder="Escriba la descripción..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                     <label for="mensaje">Contenido del Artículo</label>
+                                        <textarea class="form-control" type="text" id="contenido" name="contenido" placeholder="Escriba el contenido..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="precio">Precio</label>
+                                        <input class="form-control form-control-sm" type="number" id="precio" name="precio" placeholder="Escribe el precio...">
+                                    </div>
+                                    <p>Seleccione imagen<p>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="elegirArchivo" lang="es" name="imagen">
+                                        <label class="custom-file-label" for="elegirArchivo">Seleccionar Archivo</label>
+                                    </div>
+                                    <div class="modal-footer">
                                     <a href="#" class="btn btn-primary">Guardar</a>
                                     <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                    </div>
+                                </form>
                                 </div>
                             </div>
                         </div>
