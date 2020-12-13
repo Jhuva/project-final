@@ -363,6 +363,7 @@
                         
                         <thead>
                             <tr class="table-primary">
+                                <th>Codigo</th>
                                 <th>Nombre</th>
                                 <th>Razon social</th>
                                 <th>Direccion</th>
@@ -379,13 +380,14 @@
                             ?>
 
                             <tr>
+                                <td><?php echo $mostrar["id_prov"]?></td>
                                 <td><?php echo $mostrar["nombre_prov"]?></td>
                                 <td><?php echo $mostrar["raz_social"]?></td>
                                 <td><?php echo $mostrar["direccion"]?></td>
                                 <td><?php echo $mostrar["telefono"]?></td>
                                 <td><?php echo $mostrar["email"]?></td>
                                 <td>
-                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalUpr">Actualizar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm editbtn" role="button" data-toggle="modal" data-target="#contenidoModalUpr">Actualizar</a>
                                     <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalDpr">Eliminar</a>
                                 </td>
 
@@ -409,11 +411,36 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    
-                                    <div class="modal-footer">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
-                                    </div>
+                                    <form action="actualizarProveedores.php" method="POST">
+
+                                        <input type="hidden" name="id" id="updateid">
+
+                                        <div class="form-group">
+                                            <p>Nombre del Proveedor</p>
+                                            <input type="text" class="form-control" name="nombre" id="nombre">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Razón Social</p>
+                                            <input type="text" class="form-control" name="razonSocial" id="razonSocial">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Dirección o Ubicación</p>
+                                            <input type="text" class="form-control" name="direccion" id="direccion">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Teléfono de contacto</p>
+                                            <input type="number" class="form-control" name="telefono" id="telefono">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Correo electrónico</p>
+                                            <input type="text" class="form-control" name="correo" id="correo">
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="registrar">Guardar cambios</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -591,6 +618,21 @@
         $(document).ready( function () {
         $('#table_idad').DataTable();
         } );
+    </script>
+
+    <script>
+        $('.editbtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#updateid').val(datos[0]);
+            $('#nombre').val(datos[1]);
+            $('#razonSocial').val(datos[2]);
+            $('#direccion').val(datos[3]);
+            $('#telefono').val(datos[4]);
+            $('#correo').val(datos[5]);
+        });
     </script>
 
 </body>
