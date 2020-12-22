@@ -1,5 +1,5 @@
 <?php
-// REGISTRAR PROVEEDORES
+// ACTUALIZAR PROVEEDORES
 include_once("db.php");
 
 $id= $_POST['id'];

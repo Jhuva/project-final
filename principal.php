@@ -516,6 +516,7 @@
                         
                         <thead>
                             <tr class="table-primary">
+                                <th>Codigo</th>
                                 <th>Usuario</th>
                                 <th>Contraseña</th>
                                 <th>Acción</th>
@@ -529,11 +530,12 @@
                             ?>
 
                             <tr>
+                                <td><?php echo $mostrar["id"]?></td>
                                 <td><?php echo $mostrar["usuario"]?></td>
                                 <td><?php echo $mostrar["contraseña"]?></td>
                                 <td>
-                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalUad">Actualizar</a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalDad">Eliminar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm editAbtn" role="button" data-toggle="modal" data-target="#contenidoModalUad">Actualizar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm deleteAbtn" role="button" data-toggle="modal" data-target="#contenidoModalDad">Eliminar</a>
                                 </td>
 
                                 <?php 
@@ -547,7 +549,7 @@
 
                     <!--MODAL UPDATE-->
                     <div class="modal fade" id="contenidoModalUad" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
+                        <div class="modal-dialog modal-md">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">¿Quieres modificar algún dato?</h4>
@@ -556,11 +558,21 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    
-                                    <div class="modal-footer">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
-                                    </div>
+                                    <form action="actualizarAdmin.php" method="POST">
+                                        <input type="hidden" name="idA" id="updateAid">
+                                        <div class="form-group">
+                                            <p>Nombre del Usuario</p>
+                                            <input type="text" class="form-control" name="nombreA" id="usuarioA">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Contraseña</p>
+                                            <input type="password" class="form-control" name="passwordA" id="passwordA">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -576,9 +588,14 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn btn-primary">Borrar</a>
-                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                <div class="body">
+                                    <form action="eliminarAdmin.php" method="POST">
+                                        <input type="hidden" name="idA" id="deleteAid">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="eliminar">Eliminar</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -650,5 +667,26 @@
         });
     </script>
 
+    <script>
+        $('.editAbtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#updateAid').val(datos[0]);
+            $('#usuarioA').val(datos[1]);
+            $('#passwordA').val(datos[2]);
+        });
+    </script>
+
+    <script>
+        $('.deleteAbtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#deleteAid').val(datos[0]);
+        });
+    </script>
 </body>
 </html>
