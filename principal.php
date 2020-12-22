@@ -386,7 +386,7 @@
                                 <td><?php echo $mostrar["email"]?></td>
                                 <td>
                                     <a href="#" class="btn btn-outline-danger btn-sm editbtn" role="button" data-toggle="modal" data-target="#contenidoModalUpr">Actualizar</a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalDpr">Eliminar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm deletebtn" role="button" data-toggle="modal" data-target="#contenidoModalDpr">Eliminar</a>
                                 </td>
 
                                 <?php
@@ -454,8 +454,9 @@
                                 </div>
                                 <div class="body">
                                     <form action="eliminarProveedores.php" method="POST">
+                                        <input type="hidden" name="id" id="deleteid">
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" name="registrar">Guardar cambios</button>
+                                            <button type="submit" class="btn btn-primary" name="eliminar">Eliminar</button>
                                             <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                         </div>
                                     </form>
@@ -636,6 +637,16 @@
             $('#direccion').val(datos[3]);
             $('#telefono').val(datos[4]);
             $('#correo').val(datos[5]);
+        });
+    </script>
+
+    <script>
+        $('.deletebtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#deleteid').val(datos[0]);
         });
     </script>
 
