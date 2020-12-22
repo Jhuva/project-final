@@ -344,14 +344,19 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">¿Deseas Borrar?</h4>
+                                    <h4 class="modal-title">¿Deseas Eliminar este producto?</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn btn-primary">Borrar</a>
-                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                <div class="body">
+                                    <form action="eliminarProductos.php" method="POST">
+                                        <input type="hidden" name="id" id="deletePid">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="eliminar">Eliminar</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -706,5 +711,16 @@
             $('#precioP').val(datos[5]);
         });
     </script>
+
+    <script>
+        $('.deletePbtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#deletePid').val(datos[0]);
+        });
+    </script>
+
 </body>
 </html>
