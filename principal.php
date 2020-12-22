@@ -14,7 +14,8 @@
                         det_categoria.nombre_det,
                         productos.titulo,
                         productos.precio,
-                        productos.imagen
+                        productos.imagen,
+                        productos.id_producto
                 FROM categoria INNER JOIN det_categoria
                 on categoria.id_cat=det_categoria.id_cat
                 INNER JOIN productos on det_categoria.id_det=productos.id_det_categoria;";
@@ -226,6 +227,7 @@
                     <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_id">
                         <thead>
                             <tr class="table-primary">
+                                <th>Codigo</th>
                                 <th>Categoría</th>
                                 <th>Detalle</th>
                                 <th>Título</th>
@@ -242,6 +244,7 @@
                             ?>
 
                             <tr>
+                                <td><?php echo $mostrar["id_producto"]?></td>
                                 <td><?php echo $mostrar["nombre_cat"]?></td>
                                 <td><?php echo $mostrar["nombre_det"]?></td>
                                 <td><?php echo $mostrar["titulo"]?></td>
@@ -250,8 +253,8 @@
                                 </td>
                                 <td><?php echo $mostrar["precio"]?></td>
                                 <td>
-                                <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</a>
+                                    <button href="#" class="btn btn-outline-danger btn-sm editPbtn" role="button" data-toggle="modal" data-target="#contenidoModalU">Actualizar</button>
+                                    <button href="#" class="btn btn-outline-danger btn-sm deletePbtn" role="button" data-toggle="modal" data-target="#contenidoModalD">Eliminar</button>
                                 </td>
 
                                 <?php 
@@ -270,14 +273,14 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Actualizar</h4>
+                                    <h4 class="modal-title">Actualizar Producto</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                <form action="editarProducto.php" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="id" id="update_id">
+                                <form action="actualizarProducto.php" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" id="updatePid">
                                     <div class="form-group">
                                         <label for="seleccion" id="categoria">Categoría</label>
 
@@ -307,28 +310,28 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="titulo">Título</label>
-                                        <input class="form-control form-control-sm" type="text" id="titulo" name="titulo" placeholder="Escribe el título...">
+                                        <input class="form-control form-control-sm" type="text" id="tituloP" name="titulo" placeholder="Escribe el título...">
                                     </div>
                                     <div class="form-group">
                                         <label for="mensaje">Descripción del Artículo</label>
-                                        <textarea class="form-control" type="text" id="descripción" name="descripcion" placeholder="Escriba la descripción..."></textarea>
+                                        <textarea class="form-control" type="text" id="descripcionP" name="descripcion" placeholder="Escriba la descripción..."></textarea>
                                     </div>
                                     <div class="form-group">
                                      <label for="mensaje">Contenido del Artículo</label>
-                                        <textarea class="form-control" type="text" id="contenido" name="contenido" placeholder="Escriba el contenido..."></textarea>
+                                        <textarea class="form-control" type="text" id="contenidoP" name="contenido" placeholder="Escriba el contenido..."></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="precio">Precio</label>
-                                        <input class="form-control form-control-sm" type="number" id="precio" name="precio" placeholder="Escribe el precio...">
+                                        <input class="form-control form-control-sm" type="number" id="precioP" name="precio" placeholder="Escribe el precio...">
                                     </div>
                                     <p>Seleccione imagen<p>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="elegirArchivo" lang="es" name="imagen">
-                                        <label class="custom-file-label" for="elegirArchivo">Seleccionar Archivo</label>
+                                        <input type="file" class="custom-file-input" id="elegirArchivoP" lang="es" name="imagen">
+                                        <label class="custom-file-label" for="elegirArchivoP">Seleccionar Archivo</label>
                                     </div>
                                     <div class="modal-footer">
-                                    <a href="#" class="btn btn-primary">Guardar</a>
-                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>
                                 </form>
                                 </div>
@@ -686,6 +689,21 @@
                 return $(this).text();
             });
             $('#deleteAid').val(datos[0]);
+        });
+    </script>
+
+    <script>
+        $('.editPbtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#updatePid').val(datos[0]);
+            $('#categoria').val(datos[1]);
+            $('#seleccion').val(datos[2]);
+            $('#tituloP').val(datos[3]);
+            $('#elegirArchivoP').val(datos[4]['tmp_name']);
+            $('#precioP').val(datos[5]);
         });
     </script>
 </body>
