@@ -456,9 +456,13 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn btn-primary">Borrar</a>
-                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                <div class="body">
+                                    <form action="eliminarProveedores.php" method="POST">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="registrar">Guardar cambios</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
