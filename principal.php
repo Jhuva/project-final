@@ -577,6 +577,7 @@
                                         <label for="precio">Precio</label>
                                         <input class="form-control form-control-sm" type="number" id="precioV" name="precioVenta">
                                     </div>
+                                    <input type="submit" class="btn btn-primary mt-4" value="Agregar" name="guardar">
                                 </form>
 
                             </div>
