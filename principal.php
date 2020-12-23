@@ -552,11 +552,22 @@
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="vender">
                             <div class="col col-lg-4">
-                                <form action="agregarVenta" method="POST">
+                                <form action="agregarVenta.php" method="POST">
                                     <div class="form-group mt-4 pt-2">
                                         <label for="seleccion">Selecciona Cliente</label>
                                         <select name="clienteVenta" id="seleccionV" class="form-control">
-                                            <option value="0">Selecciona</option>
+                                            <option value="A">Selecciona</option>
+                                            <?php 
+                                                $consulta3 = "SELECT id_cliente, nombre, apellido
+                                                                FROM clientes";
+                                                $resultado4 = mysqli_query($conexion,$consulta3);
+                                                while ($cliente=mysqli_fetch_row($resultado4)):
+    
+                                            ?>
+                                            
+                                            <option value="<?php echo $cliente[0]?>"><?php echo $cliente[2]." ".$cliente[1]?></option>
+                                            
+                                            <?php endwhile; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
