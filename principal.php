@@ -116,6 +116,9 @@
                     <a class="nav-link text-uppercase" href="#clientes" data-toggle="tab">Clientes</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="#ventas" data-toggle="tab">Vender articulo</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#proveedores" data-toggle="tab">Proveedores</a>
                 </li>
                 <li class="nav-item">
@@ -369,7 +372,7 @@
             </div>
             <div class="tab-pane fade pt-5 mb-5" id="clientes">
                 <div class="col">
-                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table-idcl">
+                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_idC">
                     <a href="#" class="btn btn-outline-secondary btn-md mb-4" role="button" data-toggle="modal" data-target="#agregarCliente">Agregar Nuevo Cliente</a>
                         <thead>
                             <tr class="table-primary">
@@ -533,9 +536,59 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-pane fade pt-3 mb-5" id="ventas">
+                <h2>Venta de productos</h2>
+                <div class="col">
+                    <div class="border-top border-bottom mt-4 mt-lg-5 py-2">
+                        <ul class="nav nav-pills nav-fill">
+                            <li class="nav-item">
+                                <a href="#vender" class="nav-link active" data-toggle="tab">Vender producto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#ventasp" class="nav-link" data-toggle="tab">Ventas realizadas</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="vender">
+                            <div class="col col-lg-4">
+                                <form action="agregarVenta" method="POST">
+                                    <div class="form-group mt-4 pt-2">
+                                        <label for="seleccion">Selecciona Cliente</label>
+                                        <select name="clienteVenta" id="seleccionV" class="form-control">
+                                            <option value="0">Selecciona</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="seleccion">Selecciona Producto</label>
+                                        <select name="productoVenta" id="seleccionV" class="form-control">
+                                            <option value="0">Selecciona</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mensaje">Descripción del Artículo</label>
+                                        <textarea class="form-control" type="text" id="descripciónV" name="descripcionVenta"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cantidad">Cantidad</label>
+                                        <input class="form-control form-control-sm" type="number" id="cantidadV" name="cantidadVenta">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="precio">Precio</label>
+                                        <input class="form-control form-control-sm" type="number" id="precioV" name="precioVenta">
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ventasp">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="tab-pane fade pt-5 mb-5" id="proveedores">
                 <div class="col">
-                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table-idpr">
+                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table_idpr">
                     <a href="#" class="btn btn-outline-secondary btn-md mb-4" role="button" data-toggle="modal" data-target="#agregarProveedor">Agregar Nuevo Proveedor</a>
                         <thead>
                             <tr class="table-primary">
@@ -822,7 +875,7 @@
 
     <script>
         $(document).ready( function () {
-        $('#table_idcl').DataTable();
+        $('#table_idC').DataTable();
         } );
     </script>
 
