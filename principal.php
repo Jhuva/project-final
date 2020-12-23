@@ -22,6 +22,7 @@
     
     $proveedores = "SELECT * FROM proveedores";
     $administradores = "SELECT * FROM administrador";
+    $clientes = "SELECT * FROM clientes";
     
     // Codigo para hacer el menu dinamico con php
     
@@ -110,6 +111,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#productos" data-toggle="tab">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="#clientes" data-toggle="tab">Clientes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#proveedores" data-toggle="tab">Proveedores</a>
@@ -363,10 +367,176 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-pane fade pt-5 mb-5" id="clientes">
+                <div class="col">
+                    <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table-idcl">
+                    <a href="#" class="btn btn-outline-secondary btn-md mb-4" role="button" data-toggle="modal" data-target="#agregarCliente">Agregar Nuevo Cliente</a>
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Direccion</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                                <th>DNI</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <?php
+                                $resultado3 = mysqli_query($conexion, $clientes) or die (mysqli_error($conexion));
+                                while($mostrar = mysqli_fetch_assoc($resultado3)) {
+                            ?>
+
+                            <tr>
+                                <td><?php echo $mostrar["id_cliente"]?></td>
+                                <td><?php echo $mostrar["nombre"]?></td>
+                                <td><?php echo $mostrar["apellido"]?></td>
+                                <td><?php echo $mostrar["direccion"]?></td>
+                                <td><?php echo $mostrar["email"]?></td>
+                                <td><?php echo $mostrar["telefono"]?></td>
+                                <td><?php echo $mostrar["dni"]?></td>
+                                <td>
+                                    <a href="#" class="btn btn-outline-danger btn-sm editCbtn" role="button" data-toggle="modal" data-target="#contenidoModalUcl">Actualizar</a>
+                                    <a href="#" class="btn btn-outline-danger btn-sm deleteCbtn" role="button" data-toggle="modal" data-target="#contenidoModalDcl">Eliminar</a>
+                                </td>
+                                <?php
+                                    } mysqli_free_result($resultado3);
+                                ?>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+                    <!--MODAL UPDATE-->
+                    <div class="modal fade" id="contenidoModalUcl" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">¿Quieres modificar algún dato?</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="actualizarClientes.php" method="POST">
+
+                                        <input type="hidden" name="idC" id="updateCid">
+
+                                        <div class="form-group">
+                                            <p>Nombre del Cliente</p>
+                                            <input type="text" class="form-control" name="nombre" id="nombreC">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Apellidos completos</p>
+                                            <input type="text" class="form-control" name="apellidos" id="apellidosC">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Dirección</p>
+                                            <input type="text" class="form-control" name="direccion" id="direccionC">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Correo electrónico</p>
+                                            <input type="text" class="form-control" name="correo" id="correoC">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Teléfono de contacto</p>
+                                            <input type="number" class="form-control" name="telefono" id="telefonoC">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>DNI</p>
+                                            <input type="number" class="form-control" name="dni" id="dniC">
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="registrar">Guardar cambios</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--MODAL DELETE-->
+                    <div class="modal fade" id="contenidoModalDcl" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">¿Deseas Eliminarlo?</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="body">
+                                    <form action="eliminarClientes.php" method="POST">
+                                        <input type="hidden" name="idC" id="deleteCid">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="eliminar">Eliminar</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--MODAL AGREGAR PROVEEDOR-->
+
+                <div class="modal fade" id="agregarCliente" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Agregue un cliente nuevo</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="agregarClientes.php" method="POST">
+                                    <input type="hidden" name="idC" id="updateCid">
+
+                                    <div class="form-group">
+                                        <p>Nombre del Cliente</p>
+                                        <input type="text" class="form-control" name="nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Apellidos completos</p>
+                                        <input type="text" class="form-control" name="apellidos">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Dirección</p>
+                                        <input type="text" class="form-control" name="direccion">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Correo electrónico</p>
+                                        <input type="text" class="form-control" name="correo">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Teléfono de contacto</p>
+                                        <input type="number" class="form-control" name="telefono">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>DNI</p>
+                                        <input type="number" class="form-control" name="dni">
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" name="registrar">Guardar cambios</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </form>
+                                
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="tab-pane fade pt-5 mb-5" id="proveedores">
                 <div class="col">
                     <table class="table table-bordered table-hover table-responsive-sm mt-5 mb-5 btn-sm display" id="table-idpr">
-                    <a href="#" class="btn btn-outline-secondary btn-md mb-4" role="button" data-toggle="modal" data-target="#agregarProveedor">Agregar</a>
+                    <a href="#" class="btn btn-outline-secondary btn-md mb-4" role="button" data-toggle="modal" data-target="#agregarProveedor">Agregar Nuevo Proveedor</a>
                         <thead>
                             <tr class="table-primary">
                                 <th>Codigo</th>
@@ -375,7 +545,7 @@
                                 <th>Direccion</th>
                                 <th>Telefono</th>
                                 <th>email</th>
-                                <th>Acción</th>
+                                <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -407,7 +577,7 @@
 
                     <!--MODAL UPDATE-->
                     <div class="modal fade" id="contenidoModalUpr" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
+                        <div class="modal-dialog modal-md">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">¿Quieres modificar algún dato?</h4>
@@ -452,7 +622,7 @@
                     </div>
                     <!--MODAL DELETE-->
                     <div class="modal fade" id="contenidoModalDpr" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
+                        <div class="modal-dialog modal-md">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">¿Deseas Eliminarlo?</h4>
@@ -476,7 +646,7 @@
                 <!--MODAL AGREGAR PROVEEDOR-->
 
                 <div class="modal fade" id="agregarProveedor" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-md">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">¿Un miembro más al grupo?</h4>
@@ -632,7 +802,7 @@
         $('#table_id').DataTable();
         } );
     </script>
-        <script>
+    <script>
         $(document).ready( function () {
         $('#table_id').DataTable();
         } );
@@ -647,6 +817,12 @@
     <script>
         $(document).ready( function () {
         $('#table_idad').DataTable();
+        } );
+    </script>
+
+    <script>
+        $(document).ready( function () {
+        $('#table_idcl').DataTable();
         } );
     </script>
 
@@ -719,6 +895,32 @@
                 return $(this).text();
             });
             $('#deletePid').val(datos[0]);
+        });
+    </script>
+
+    <script>
+        $('.editCbtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#updateCid').val(datos[0]);
+            $('#nombreC').val(datos[1]);
+            $('#apellidosC').val(datos[2]);
+            $('#direccionC').val(datos[3]);
+            $('#correoC').val(datos[4]);
+            $('#telefonoC').val(datos[5]);
+            $('#dniC').val(datos[6]);
+        });
+    </script>
+
+    <script>
+        $('.deleteCbtn').on('click',function() {
+            $tr = $(this).closest('tr');
+            var datos = $tr.children('td').map(function(){
+                return $(this).text();
+            });
+            $('#deleteCid').val(datos[0]);
         });
     </script>
 
