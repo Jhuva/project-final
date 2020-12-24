@@ -1042,6 +1042,19 @@
         });
     </script>
     <script type="text/javascript">
+        function quitarP(index) {
+            $.ajax({
+                    type:"POST",
+                    data:"ind=" + index,
+                    url:"quitarVenta.php",
+                    success:function(r){
+                        $('#tablaVentasTempLoad').load("tablaVentasTemp.php");
+                        alertify.success("Se quito el producto");
+                    }
+            })
+        }
+    </script>
+    <script type="text/javascript">
         $(document).ready(function(){
             $('#seleccionPV').select2();
         })

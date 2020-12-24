@@ -32,8 +32,9 @@ session_start();
     $cliente=""; // En esta se guarda el nombre del cliente
 
         if(isset($_SESSION['tablaComprasTemp'])):
+            $i=0;
             foreach (@$_SESSION['tablaComprasTemp'] as $key) {
-
+                
                 $d=explode("||", @$key);
 
     ?>
@@ -44,15 +45,21 @@ session_start();
             <td><?php echo $d[3] ?></td>
             <td><?php echo $d[4] ?></td>
             <td>
-                <span class="btn btn-danger btn-xs">Quitar</span>
+                <span class="btn btn-danger btn-xs" onclick="quitarP('<?php echo $i; ?>')">Quitar</span>
             </td>
         </tr>
 
     <?php 
+            $total = $total + $d[3];
+            $i++;
             }
         endif; 
     ?>    
 
     </tbody>
+    
+    <tr>
+        <td><strong>Total de venta: <?php echo "S/.".$total; ?></strong></td>
+    </tr>
 
 </table>
