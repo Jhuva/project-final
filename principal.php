@@ -551,8 +551,9 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="vender">
+                        <div class="row">
                             <div class="col col-lg-4">
-                                <form action="agregarVenta.php" method="POST">
+                                <form id="formV">
                                     <div class="form-group mt-4 pt-2">
                                         <label for="seleccion">Selecciona Cliente</label>
                                         <select name="clienteVenta" id="seleccionV" class="form-control">
@@ -587,7 +588,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="mensaje">Descripción del Artículo</label>
-                                        <textarea readonly="" class="form-control" type="text" id="descripciónV" name="descripcionVenta"></textarea>
+                                        <textarea readonly="" class="form-control" type="text" id="descripcionV" name="descripcionVenta"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="precio">Cantidad</label>
@@ -597,10 +598,13 @@
                                         <label for="precio">Precio</label>
                                         <input readonly="" class="form-control form-control-sm" type="number" id="precioV" name="precioVenta">
                                     </div>
-                                    <input type="submit" class="btn btn-primary mt-4" value="Agregar" name="guardar">
+                                    <span class="btn btn-primary mt-4" id="btnAgregarV">Agregar</span>
                                 </form>
-
                             </div>
+                            <div class="col-lg-8">
+                                <div id="tablaVentasTempLoad"></div>
+                            </div>
+                        </div>
                         </div>
                         <div class="tab-pane fade" id="ventasp">
                         </div>
@@ -1001,6 +1005,7 @@
     <!--PARTE DE LA VENTA DE PRODUCTOS-->
     <script type="text/javascript">
         $(document).ready(function(){
+            $('#tablaVentasTempLoad').load("tablaVentasTemp.php");
             $('#seleccionPV').change(function(){
                 $.ajax({
                     type: "POST",
@@ -1009,11 +1014,22 @@
                     success:function(r){
                         dato=jQuery.parseJSON(r);
 
-                        $('#descripciónV').val(dato['des_art']);
+                        $('#descripcionV').val(dato['des_art']);
                         $('#precioV').val(dato['precio']);
                     }
                 });
             });
+            $('#btnAgregarV').click(function(){
+                datos=$('#formV').serialize();
+                $.ajax({
+                    type:"POST",
+                    data:datos,
+                    url:"agregarVenta.php",
+                    success:function(r){
+
+                    }
+                })
+            })
         });
     </script>
     <script type="text/javascript">
