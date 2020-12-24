@@ -572,21 +572,30 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="seleccion">Selecciona Producto</label>
-                                        <select name="productoVenta" id="seleccionV" class="form-control">
+                                        <select name="productoVenta" id="seleccionPV" class="form-control">
                                             <option value="0">Selecciona</option>
+                                            <?php
+                                                $consulta4 = "SELECT id_producto,titulo FROM productos";
+                                                $resultado5 = mysqli_query($conexion,$consulta4);
+                                                while ($producto1=mysqli_fetch_row($resultado5)):
+                                            ?>
+
+                                            <option value="<?php echo $producto1[0]?>"><?php echo $producto1[1]?></option>
+                                            
+                                            <?php endwhile; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="mensaje">Descripción del Artículo</label>
-                                        <textarea class="form-control" type="text" id="descripciónV" name="descripcionVenta"></textarea>
+                                        <textarea readonly="" class="form-control" type="text" id="descripciónV" name="descripcionVenta"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="cantidad">Cantidad</label>
-                                        <input class="form-control form-control-sm" type="number" id="cantidadV" name="cantidadVenta">
+                                        <label for="precio">Cantidad</label>
+                                        <input readonly="" class="form-control form-control-sm" type="number" id="cantidadV" name="cantidadVenta" value="1">
                                     </div>
                                     <div class="form-group">
                                         <label for="precio">Precio</label>
-                                        <input class="form-control form-control-sm" type="number" id="precioV" name="precioVenta">
+                                        <input readonly="" class="form-control form-control-sm" type="number" id="precioV" name="precioVenta">
                                     </div>
                                     <input type="submit" class="btn btn-primary mt-4" value="Agregar" name="guardar">
                                 </form>
@@ -988,6 +997,29 @@
             $('#deleteCid').val(datos[0]);
         });
     </script>
+    
+    <!--PARTE DE LA VENTA DE PRODUCTOS-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#seleccionPV').change(function(){
+                $.ajax({
+                    type: "POST",
+                    data: "idproducto=" + $('#seleccionPV').val(),
+                    url:"procesos/ventas/llenarFormProducto.php",
+                    success:function(r){
+                        dato=jQuery.parseJSON(r);
 
+                        $('#descripciónV').val(dato['des_art']);
+                        $('#precioV').val(dato['precio']);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#seleccionPV').select2();
+        })
+    </script>
 </body>
 </html>
