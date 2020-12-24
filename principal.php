@@ -1053,11 +1053,24 @@
                     }
             })
         }
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#seleccionPV').select2();
-        })
+
+        function crearVenta(){
+            $.ajax({
+                url:"crearVenta.php",
+                success:function(r){
+                    if(r > 0) {
+                        $('#tablaVentasTempLoad').load("tablaVentasTemp.php");
+                        $('#formV')[0].reset();
+                        alert("Venta creada con éxito, consulte la informacion en ventas realizadas");
+                    } else if(r==0) {
+                        alert("¡No hay lista de venta!");
+                    } else {
+                        alert("No se pudo crear la venta");
+                    }
+                }
+            });
+        }
+
     </script>
 </body>
 </html>

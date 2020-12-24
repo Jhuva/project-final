@@ -29,6 +29,63 @@
             );
             return $datos;
         }
+
+        public function crearVenta(){
+            $c = new conectar();
+            $conexion = $c->conexion();
+
+            $fecha=date('y-m-d');
+            $idventa=self::creaFolio();
+            $datos=$_SESSION['tablaComprasTemp'];
+            $r=0;
+
+            for($i=0; $i < count($datos); $i++) {
+                $d=explode("||", $datos[$i]);
+
+                $sql = "INSERT INTO ventas(id_ventas,
+                                            id_clientes,
+                                            costoTotal,
+                                            fechaCompra)
+                        VALUES ('$idventa',
+                                '$d[5]',
+                                '$d[3]',
+                                '$fecha')";
+                
+                $sql1 = "INSERT INTO detalle_ventas(id_producto,
+                                                    id_ventas,
+                                                    subTotal) 
+                        VALUES ('$d[0]',
+                                '$idventa',
+                                '$d[3]')";
+                
+                $r = $r + $result=mysqli_query($conexion,$sql);
+                $r = $r + $result1=mysqli_query($conexion,$sql1);
+            }
+
+            return $r;
+
+        }
+
+        public function creaFolio(){
+
+            $c = new conectar();
+            $conexion = $c->conexion();
+
+            $sql = "SELECT id_ventas FROM ventas GROUP BY id_ventas DESC";
+
+            $resul = mysqli_query($conexion,$sql);
+            $id=mysqli_fetch_row($resul)[0];
+
+            if($id == "" or $id == null or $id == 0) {
+                return 1;
+            } else {
+                return $id + 1;
+            }
+
+        }
+
+        
+
     }
 
 

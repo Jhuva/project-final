@@ -13,7 +13,7 @@ session_start();
 
 <table class="table table-bordered table-hover table-responsive-sm mt-4">
     <caption>
-        <span class="btn btn-success">Generar venta</span>
+        <span class="btn btn-success" onclick="crearVenta()">Generar venta</span>
     </caption>
     <thead>
         <tr class="table-primary">
