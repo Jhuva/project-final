@@ -598,7 +598,8 @@
                                         <label for="precio">Precio</label>
                                         <input readonly="" class="form-control form-control-sm" type="number" id="precioV" name="precioVenta">
                                     </div>
-                                    <span class="btn btn-primary mt-4" id="btnAgregarV">Agregar</span>
+                                    <span class="btn btn-primary" id="btnAgregarV">Agregar</span>
+                                    <span class="btn btn-danger" id="btnVaciarV">Vaciar ventas</span>
                                 </form>
                             </div>
                             <div class="col-lg-8">
@@ -1026,7 +1027,15 @@
                     data:datos,
                     url:"agregarVenta.php",
                     success:function(r){
-
+                        $('#tablaVentasTempLoad').load("tablaVentasTemp.php");
+                    }
+                })
+            })
+            $('#btnVaciarV').click(function(){
+                $.ajax({
+                    url:"vaciarVentasTemp.php",
+                    success:function(r){
+                        $('#tablaVentasTempLoad').load("tablaVentasTemp.php");
                     }
                 })
             })
