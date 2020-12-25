@@ -608,6 +608,9 @@
                         </div>
                         </div>
                         <div class="tab-pane fade" id="ventasp">
+                            <?php
+                            require_once "ventasReportes.php"
+                            ?>
                         </div>
                     </div>
                 </div>

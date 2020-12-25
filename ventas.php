@@ -84,7 +84,40 @@
 
         }
 
-        
+        public function nombreCliente($idCliente) {
+            
+            $c = new conectar();
+            $conexion = $c->conexion();
+
+            $sql = "SELECT nombre, apellido
+                    FROM clientes
+                    WHERE id_cliente = '$idCliente'";
+            
+            $result = mysqli_query($conexion, $sql);
+
+            $ver = mysqli_fetch_row($result);
+
+            return $ver[1]." ".$ver[0];
+        }
+
+        public function obtenerTotal($idventa) {
+            $c = new conectar();
+            $conexion = $c->conexion();
+
+            $sql = "SELECT costoTotal
+                    FROM ventas
+                    WHERE id_ventas='$idventa'";
+            $result = mysqli_query($conexion, $sql);
+
+            $total = 0;
+
+            while($ver=mysqli_fetch_row($result)) {
+                $total = $total + $ver[0];
+            }
+
+            return $total;
+
+        }
 
     }
 
