@@ -104,8 +104,8 @@
             $c = new conectar();
             $conexion = $c->conexion();
 
-            $sql = "SELECT costoTotal
-                    FROM ventas
+            $sql = "SELECT subTotal
+                    FROM detalle_ventas
                     WHERE id_ventas='$idventa'";
             $result = mysqli_query($conexion, $sql);
 

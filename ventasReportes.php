@@ -30,7 +30,7 @@ $result = mysqli_query($conexion,$sql);
                     <td>Fecha</td>
                     <td>Cliente</td>
                     <td>Total de compra</td>
-                    <td>Ticket</td>
+                    <!--<td>Ticket</td>-->
                     <td>Reporte</td>
                 </tr>
                 </thead>
@@ -52,11 +52,11 @@ $result = mysqli_query($conexion,$sql);
                                 echo "S/.".$obj->obtenerTotal($ver[0]);
                             ?>
                         </td>
-                        <td>
+                        <!--<td>
                             <a href="#" class="btn btn-outline-danger btn-sm">Ticket</a>
-                        </td>
+                        </td>-->
                         <td>
-                            <a href="#" class="btn btn-outline-danger btn-sm">Reporte</a>
+                            <a href="crearReportePdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-outline-danger btn-sm">Reporte</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>
