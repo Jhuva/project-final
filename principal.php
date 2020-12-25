@@ -909,6 +909,12 @@
     </script>
 
     <script>
+        $(document).ready( function () {
+        $('#table_idVR').DataTable();
+        } );
+    </script>
+
+    <script>
         $('.editbtn').on('click',function() {
             $tr = $(this).closest('tr');
             var datos = $tr.children('td').map(function(){
